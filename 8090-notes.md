@@ -3,6 +3,25 @@
 
 Software Factory is a product within 8090 platform
 
+## Contents
+- [Overview](#overview)
+- [Software Factory Components](#software-factory-components)
+  - [Common Components (Raw Materials | Knowledge Base)](#common-components-raw-materials--knowledge-base)
+  - [Process Components (Modules)](#process-components-modules)
+  - [Software Factory Development Control Plane](#software-factory-development-control-plane)
+    - [Requirement](#requirement)
+    - [Blueprints](#blueprints)
+    - [Workorders](#workorders)
+    - [Feedback](#feedback)
+- [Knowledge Graph](#knowledge-graph)
+- [Development](#development)
+- [Reverse Engineering](#reverse-engineering)
+- [Administration](#administration)
+  - [Billing](#billing)
+  - [Capacity](#capacity)
+- [Migrating from JIRA](#migrating-from-jira)
+- [Additional Notes](#additional-notes)
+
 ## Overview
 
 Objective is to enforce Quality and Reliability in Software Development using AI
