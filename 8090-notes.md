@@ -36,7 +36,7 @@ Typical SDLC Process involves the following high-level steps:
 
 Software Factory provides one common, **coordinated** plane for all of the above with specialized Agentic AI helping each step above.
 
-![Software Factory coordinated plane](image-1.png)
+![Software Factory coordinated plane](assets/image-1.png)
 
 ## Software Factory Components
 
@@ -44,12 +44,12 @@ Dashboard:
 
 **"Explore 8090"** is the project name
 
-![alt text](image-3.png)
+![alt text](assets/image-3.png)
 Note: Recent update renamed Artifacts and Codebase to Knowledge Base
 
 Chat Agent Options:
 
-![alt text](image-4.png) ![alt text](image-5.png) ![alt text](image-6.png)
+![alt text](assets/image-4.png) ![alt text](assets/image-5.png) ![alt text](assets/image-6.png)
 
 ### Common Components (Raw Materials | Knowledge Base)
   - Artifacts| Knowledge Base (MD files, audio, video, etc.)
@@ -65,7 +65,7 @@ Chat Agent Options:
 
 ### Software Factory Development Control Plane
 
-![Software Factory Development Control Plane](image-2.png)
+![Software Factory Development Control Plane](assets/image-2.png)
 
 
 #### Requirement
@@ -81,11 +81,11 @@ With Software Factory as the single source of truth for PRD.
 
 Requirement component window is a Markdown Editor with Agent tools around to help
 
-![alt text](image-7.png)
+![alt text](assets/image-7.png)
 
 Note: Left navigation listing the structure and 'Get Started' and Agent Prompting to draft the requirement sections
 
-![alt text](image-9.png)![alt text](image-8.png)
+![alt text](assets/image-9.png)![alt text](assets/image-8.png)
 
 ##### For additional info
 https://www.8090.ai/docs/opinions/requirements-writing-guide
@@ -114,7 +114,7 @@ Blueprint component allows defining blueprint/architecture for project using the
 
 Note: Container and Components forms a common baseline for defining the features i.e use cases of a software or application
 
-![alt text](image-10.png)
+![alt text](assets/image-10.png)
 
 ##### For additional info
 https://www.8090.ai/docs/opinions/blueprint-writing-guide
@@ -125,7 +125,7 @@ https://www.8090.ai/docs/opinions/blueprint-writing-guide
   Identify tasks and user stories from ERD and PRD (i.e. `Requirement` & `Blueprints`)
   Create work orders and define the order and status for development pick-up
 
-![alt text](image-11.png)
+![alt text](assets/image-11.png)
 
 - We can create work order like task ticket in JIRA and link documentation
 - Also use Agent and Skill to extract work orders from requirements
@@ -139,12 +139,12 @@ https://www.8090.ai/docs/modules/work-orders
 
 - Manual feedback
 
-  ![alt text](image-12.png)
+  ![alt text](assets/image-12.png)
 
 
 - Testing tools integration
 
-  ![alt text](image-14.png)
+  ![alt text](assets/image-14.png)
 
 ##### For additional info
 https://www.8090.ai/docs/modules/feedback
@@ -187,16 +187,16 @@ Organization can have multiple projects
 
 Administrator can manage and track usage and projects across the platform
 
-![alt text](image-16.png)
+![alt text](assets/image-16.png)
 
 
 Models:
 
-![alt text](image-15.png)
+![alt text](assets/image-15.png)
 
 Work Order Templates:
 
-![alt text](image-18.png)
+![alt text](assets/image-18.png)
 
 ### Billing
   #### Enterprise
@@ -213,7 +213,7 @@ https://www.8090.ai/docs/administration/usage#model-pricing
 
 The pricing shown above, as well as any additional charges under specific conditions (e.g., conversations exceeding 200k tokens or use of US-hosted endpoints), are sourced from the provider’s API 
 
-![alt text](image-17.png)
+![alt text](assets/image-17.png)
 
 ### Capacity
 What is the capacity? 
