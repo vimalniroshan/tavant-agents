@@ -1,31 +1,47 @@
-# 8090 - Software Factory
+# 8090 - Software Factory - Case Study
 8090 is the platform - for AI-native software development control plane.
 
 Software Factory is a product within 8090 platform
 
 ## Contents
 - [Overview](#overview)
+  - [What is 8090 / Software Factory?](#what-is-8090--software-factory)
+  - [What problem it solves](#what-problem-it-solves)
+  - [What it does not do](#what-it-does-not-do)
 - [Software Factory Components](#software-factory-components)
-  - [Common Components (Raw Materials | Knowledge Base)](#common-components-raw-materials--knowledge-base)
-  - [Process Components (Modules)](#process-components-modules)
-  - [Software Factory Development Control Plane](#software-factory-development-control-plane)
-    - [Requirement](#requirement)
+  - [Knowledge Base (Raw Materials)](#knowledge-base-raw-materials)
+    - [Artifacts](#artifacts)
+    - [Codebase](#codebase)
+  - [Module](#module)
+    - [Requirements](#requirements)
     - [Blueprints](#blueprints)
-    - [Workorders](#workorders)
+    - [Work Orders](#work-orders)
     - [Feedback](#feedback)
 - [Knowledge Graph](#knowledge-graph)
-- [Development](#development)
-- [Reverse Engineering](#reverse-engineering)
+- [Two Approaches](#two-approaches)
+  - [Forward Engineering](#forward-engineering)
+  - [Reverse Engineering](#reverse-engineering)
+    - [Migrating from JIRA](#migrating-from-jira)
 - [Administration](#administration)
-  - [Billing](#billing)
-  - [Capacity](#capacity)
-- [Migrating from JIRA](#migrating-from-jira)
-- [Additional Notes](#additional-notes)
+  - [User Management](#user-management)
+  - [Project Management](#project-management)
+  - [Organization](#organization)
+    - [Members/Seats](#membersseats)
+    - [Models](#models)
+    - [Projects](#projects)
+    - [Usage](#usage)
+    - [Templates](#templates)
+- [Billing](#billing)
+- [Capacity](#capacity)
+- [Appendix](#appendix)
+  - [Automations](#automations)
 
 ## Overview
 
-Objective is to enforce Quality and Reliability in Software Development using AI
+### What is 8090 / Software Factory?
+8090 is the platform for AI-native software development control plane. Software Factory is a product within the 8090 platform, with the objective to enforce Quality and Reliability in Software Development using AI.
 
+### What problem it solves
 Typical SDLC Process involves the following high-level steps:
 
  - Product/Feature requirement documentation (PRD) out of various discussions and sources
@@ -38,7 +54,19 @@ Software Factory provides one common, **coordinated** plane for all of the above
 
 ![Software Factory coordinated plane](assets/image-1.png)
 
+### What it does not do
+_Software Factory complements coding agent (This is NOT another coding agent)_
+
 ## Software Factory Components
+*for any Project execution*
+  - [Knowledge Base (Raw Materials)](#knowledge-base-raw-materials)
+    - [Artifacts](#artifacts)
+    - [Codebase](#codebase)
+  - [Module](#module)
+    - [Requirements](#requirements)
+    - [Blueprints](#blueprints)
+    - [Work Orders](#work-orders)
+    - [Feedback](#feedback)
 
 Dashboard:
 
@@ -51,25 +79,32 @@ Chat Agent Options:
 
 ![alt text](assets/image-4.png) ![alt text](assets/image-5.png) ![alt text](assets/image-6.png)
 
-### Common Components (Raw Materials | Knowledge Base)
-  - Artifacts| Knowledge Base (MD files, audio, video, etc.)
-  https://www.8090.ai/docs/raw-materials/artifacts
-  - Codebase
-  https://www.8090.ai/docs/raw-materials/codebase
+### Knowledge Base (Raw Materials)
 
-### Process Components (Modules)
+#### Artifacts
+This is to store raw artifacts of the project (MD files, meeting notes, images, audio, video, etc.)
+
+##### For additional info
+https://www.8090.ai/docs/raw-materials/artifacts
+
+#### Codebase
+
+Links to external code repository. Software Factory indexes & tracks code repository changes.
+
+##### For additional info
+https://www.8090.ai/docs/raw-materials/codebase
+
+### Module
 - Requirements
 - Blueprints
-- Workorders
+- Work Orders
 - Feedback
 
-### Software Factory Development Control Plane
-
 ![Software Factory Development Control Plane](assets/image-2.png)
+_Note: The coding agent and code repository are outside the control plane_
 
-
-#### Requirement
-  *Organize `requirements as feature tree`*
+#### Requirements
+  *Organize `Requirements as feature tree`*
 
 Generate/Draft PRD using the help of Agent with the following:
  - External documents (meetings notes, slack, images and others) uploaded to `Artifacts`
@@ -102,7 +137,7 @@ https://www.8090.ai/docs/opinions/requirements-writing-guide
 
 With Software Factory as the single source of truth for ERD.
 
-This follows C4 Model for "Draw and Explain Architecture" using four levels of details System Context, Containers and Components
+This follows **C4 Model for "Draw and Explain Architecture"** using four levels of details System Context, Containers and Components
 
 Simplified version of the blueprint writing:
 
@@ -112,30 +147,30 @@ Blueprint component allows defining blueprint/architecture for project using the
 - Feature Blueprints
 - Others
 
-Note: Container and Components forms a common baseline for defining the features i.e use cases of a software or application
+Note: Container and Components form a common baseline for defining the features i.e use cases of a software or application
 
 ![alt text](assets/image-10.png)
 
 ##### For additional info
 https://www.8090.ai/docs/opinions/blueprint-writing-guide
 
-#### Workorders
+#### Work Orders
   *Actionable tasks for your developers. And you can connect your coding agent over MCP to take those on*
 
-  Identify tasks and user stories from ERD and PRD (i.e. `Requirement` & `Blueprints`)
-  Create work orders and define the order and status for development pick-up
+  Identify tasks and user stories from ERD and PRD (i.e. `Requirements` & `Blueprints`)
+  Create Work Orders and define the order and status for development pick-up
 
 ![alt text](assets/image-11.png)
 
-- We can create work order like task ticket in JIRA and link documentation
-- Also use Agent and Skill to extract work orders from requirements
+- We can create a Work Order like a task ticket in JIRA and link documentation
+- Also use Agent and Skill to extract Work Orders from Requirements
 
 ##### For additional info
 https://www.8090.ai/docs/modules/work-orders
 
 #### Feedback
   *Capture user feedback and turn it into structured work*
-  Interface for user or systems to generate feedback that can turn into work orders.
+  Interface for user or systems to generate feedback that can turn into Work Orders.
 
 - Manual feedback
 
@@ -161,78 +196,92 @@ Note from various sources describing how Knowledge Graph and Base and Assets are
 - Relationships between business intent, constraints, and dependencies are dynamically bound together instead of relying on linear context matching
 - Cross-references via @mentions link specific requirements, blueprints, and text artifacts together so agents pull relevant subsets rather than full data silos
 
-## Development
+## Two Approaches
 
-Software Factory complements coding agent (This is NOT another coding agent). In a typical SDLC process, the developer picks a task from a Task Management tool (like JIRA) in the IDE, completes the development, and the IDE marks the task complete in the Task Management tool.
+### Forward Engineering
+*For new project setup, requirement to code uses the factory components in natural order.*
 
-*With Software Factory developer will be picking the task from Workorders (of Software Factory) using Coding Agent (like Claude Code) via MCP Client*
+In a typical SDLC process, the developer picks a task from a Task Management tool (like JIRA) in the IDE, completes the development, and the IDE marks the task complete in the Task Management tool.
 
-Software Factory MCP Server provides tools with the ability to pull context (requirement and blueprints) to complete the task successfully. Once done, the workorder is marked completed to reflect in Software Factory.
+With Software Factory, the developer instead picks the task from Work Orders (of Software Factory) using a Coding Agent (like Claude Code) via an MCP Client.
+
+Software Factory MCP Server provides tools with the ability to pull context (Requirements and Blueprints) to complete the task successfully. Once done, the Work Order is marked completed to reflect in Software Factory.
 
 We can build and add additional skills to support SDLC workflow and development
+
+#### For additional info
 https://www.8090.ai/docs/opinions/agent-skill
 
-## Reverse Engineering
-
+### Reverse Engineering
 For an existing `Codebase`, we can connect Software Factory to a Git Repo and create a new project. Then upload available documents to `Artifacts` and work backwards to generate `Requirements` and `Blueprints`.
-
-
-## Administration
- 
-Users belong to an Organization (having multiple seats)
-- Seats are number of user allowed for that Organization as per the billing
-
-Organization can have multiple projects
-- Currently I do not see option to control user access to a specific project 
-
-Administrator can manage and track usage and projects across the platform
 
 ![alt text](assets/image-16.png)
 
+#### Migrating from JIRA
+https://www.8090.ai/docs/opinions/jira-migration
 
-Models:
+## Administration
+
+### User Management 
+Users belong to an Organization (having multiple seats)
+- Seats are number of user allowed for that Organization as per the billing
+
+### Project Management
+  Configure Templates and Prompts for Agents (Requirements, Blueprints and Work Orders)
+
+### Organization
+
+Administrator can manage and track usage and projects across the platform
+
+![alt text](assets/image-19.png)
+
+#### Members/Seats
+![alt text](assets/image-20.png)
+
+#### Models
 
 ![alt text](assets/image-15.png)
 
-Work Order Templates:
+#### Projects
+Organization can have multiple projects.
+- Currently I do not see option to control user access to a specific project
+
+#### Usage
+![alt text](assets/image-17.png)
+
+#### Templates
 
 ![alt text](assets/image-18.png)
 
-### Billing
-  #### Enterprise
-  Starting at $1M/yr
+## Billing
 
-  #### Self Serve
-  $200 /user/month
+| Enterprise | Self Serve |
+| ---------- | ---------- |
+| Starting at $1M/yr | $200 /user/month |
   
-**Tokens billed separately**
+**_Tokens billed separately_**
 
-Model billing:
-
+### Model billing
+#### For additional info
 https://www.8090.ai/docs/administration/usage#model-pricing
 
-The pricing shown above, as well as any additional charges under specific conditions (e.g., conversations exceeding 200k tokens or use of US-hosted endpoints), are sourced from the provider’s API 
+The pricing shown above, as well as any additional charges under specific conditions (e.g., conversations exceeding 200k tokens or use of US-hosted endpoints), are sourced from the provider's API.
 
-![alt text](assets/image-17.png)
-
-### Capacity
+## Capacity
 What is the capacity? 
   - No documented technical limits
   - Number of seats defined through billing for organization
   - Model usage tokens are billed separately
 
-
-##### For additional info
+### For additional info
 https://www.8090.ai/docs/administration/organizations
 
-## Migrating from JIRA
-https://www.8090.ai/docs/opinions/jira-migration
+## Appendix
+### Automations
+Set up automations to:
+- Detect code drifts
+- Sync blueprints and requirements
+- Blueprint reference changes
+- Triage feedback
 
-
-## Additional Notes:
-
-
-
-
-
-
+![alt text](assets/image-21.png)
